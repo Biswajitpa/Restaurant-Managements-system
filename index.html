@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Riverside Bistro & Hotel 2025</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <header class="header">
+    <h1 class="logo">Biswajit Bistro & Hotel</h1>
+    <nav class="nav">
+      <a href="#home">Home</a>
+      <a href="#menu">Menu</a> 
+      <a href="#booking">Book Table</a>
+      <a href="#hotel-booking">Book Room</a>
+      <a href="#birthday">Event</a>
+      <a href="#delivery">Delivery</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#hotel-info">Hotel Info</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <div id="top-bar">
+      <span id="current-date"></span>
+      <span id="booking-count"></span>
+    </div>
+  </header>
+
+  <main class="main">
+    <!-- Home Section -->
+    <section id="home" class="section home-center">
+      <img src="https://img.icons8.com/ios-filled/200/00cfff/restaurant.png" alt="Restaurant Logo" class="home-logo">
+      <h1 class="home-title">Biswajit Bistro & Hotel</h1>
+      <p class="home-subtitle">Experience exquisite cuisine, cozy ambiance, and comfortable stays.</p>
+    </section>
+
+    <!-- Menu Section -->
+    <section id="menu" class="section">
+      <h2>Our Menu</h2>
+      <div id="filter-container" class="menu-filters">
+        <button data-filter="all" class="active">All</button>
+        <button data-filter="Indian">Indian</button>
+        <button data-filter="Chinese">Chinese</button>
+        <button data-filter="Japanese">Japanese</button>
+        <button data-filter="Veg">Veg</button>
+        <button data-filter="Non-Veg">Non-Veg</button>
+        <button data-filter="Sweet Dish">Sweet Dish</button>
+        <button data-filter="Coffee">Coffee</button>
+        <button data-filter="Hot Coffee">Hot Coffee</button>
+        <button data-filter="Cold Drinks">Cold Drinks</button>
+        <button data-filter="Snacks">Snacks</button>
+        <button data-filter="Lunch">Lunch</button>
+        <button data-filter="Dinner">Dinner</button>
+      </div>
+      <div id="menu-list" class="menu-list"><!-- Menu items will be rendered here --></div>
+    </section>
+
+    <!-- Booking Section -->
+    <section id="booking" class="section">
+      <h2>Book a Table</h2>
+      <form id="booking-form" class="flex-form">
+        <input type="text" id="name" placeholder="Your Name" required>
+        <input type="date" id="date" required>
+        <input type="time" id="time" required>
+        <select id="table" required>
+          <option value="">Select Table</option>
+        </select>
+        
+        <div id="booking-dishes" class="dish-checkboxes">
+          <p>Select Dishes:</p>
+        </div>
+        <button type="submit">Confirm Booking</button>
+      </form>
+      <div id="booking-summary" class="summary-box"></div>
+      
+    </section>
+
+    <!-- Hotel Booking Section -->
+    <section id="hotel-booking" class="section">
+      <h2>Book a Hotel Room</h2>
+      <form id="hotel-booking-form" class="flex-form">
+        <input type="text" id="guest-name" placeholder="Your Name" required>
+        <input type="date" id="checkin-date" required>
+        <input type="date" id="checkout-date" required>
+        <select id="room-type" required>
+          <option value="">Select Room Type</option>
+          <option value="single">Single Room</option>
+          <option value="double">Double Room</option>
+          <option value="suite">Suite</option>
+        </select>
+        <select id="ac-type" required>
+          <option value="">AC / Non-AC</option>
+          <option value="ac">AC</option>
+          <option value="non-ac">Non-AC</option>
+        </select>
+         <select id="payment-method">
+          <option value="cash">Cash on Arrival</option>
+          <option value="online">Online QR Payment</option>
+          <option value="ecash">eCash / UPI</option>
+        </select>
+        <div id="hotel-dishes"></div>
+        <div id="cuisine-selection">
+          <p>Select Cuisine / Dish Type:</p>
+          <button type="button" data-cuisine="all" class="active">All</button>
+          <button type="button" data-cuisine="Indian">Indian</button>
+          <button type="button" data-cuisine="Chinese">Chinese</button>
+          <button type="button" data-cuisine="Japanese">Japanese</button>
+          <button type="button" data-cuisine="Veg">Veg</button>
+          <button type="button" data-cuisine="Non-Veg">Non-Veg</button>
+          <button type="button" data-cuisine="Sweet Dish">Sweet Dish</button>
+          <button type="button" data-cuisine="Coffee">Coffee</button>
+          <button type="button" data-cuisine="Hot Coffee">Hot Coffee</button>
+          <button type="button" data-cuisine="Cold Drinks">Cold Drinks</button>
+          <button type="button" data-cuisine="Snacks">Snacks</button>
+          <button type="button" data-cuisine="Lunch">Lunch</button>
+          <button type="button" data-cuisine="Dinner">Dinner</button>
+        </div>
+        <div id="dish-list" class="menu-list"><!-- Dishes dynamically rendered --></div>
+        <button type="submit">Book Room & Order</button>
+      </form>
+      <div id="hotel-booking-summary" class="summary-box"></div>
+      
+    </section>
+
+    <!-- Event Booking Section -->
+    <section id="birthday" class="section">
+      <h2>Event Booking</h2>
+      <form id="event-form" class="flex-form">
+        <input type="text" id="event-name" placeholder="Your Name" required>
+        <input type="date" id="event-date" required>
+        <input type="time" id="event-time" required>
+        <input type="number" id="event-people" placeholder="Number of People" required>
+        <select id="event-type" required>
+          <option value="Birthday">Birthday</option>
+          <option value="Anniversary">Anniversary</option>
+          <option value="Corporate">Corporate</option>
+          <option value="Other">Other</option>
+        </select>
+        <select id="payment-method">
+          <option value="cash">Cash on Arrival</option>
+          <option value="online">Online QR Payment</option>
+          <option value="ecash">eCash / UPI</option>
+        </select>
+
+        <div id="event-dishes" class="dish-checkboxes">
+          <p>Select Event Dishes:</p>
+        </div>
+        <button type="submit">Confirm Event</button>
+      </form>
+      <div id="event-summary" class="summary-box"></div>
+    </section>
+
+    <!-- Delivery Section -->
+    <section id="delivery" class="section">
+      <h2>Home Delivery</h2>
+      <form id="delivery-form" class="flex-form">
+        <input type="text" id="del-name" placeholder="Your Name" required>
+        <input type="text" id="del-address" placeholder="Address" required>
+        <input type="text" id="del-phone" placeholder="Phone" required>
+        <select id="del-menu" required><!-- Menu dynamically rendered --></select>
+        <button type="submit">Place Order</button>
+      </form>
+      <div id="delivery-summary" class="summary-box"></div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="section">
+      <h2>Gallery</h2>
+      <div id="gallery-list" class="menu-list">
+        <div class="menu-card">
+          <img src="https://i.pinimg.com/736x/6f/c0/9c/6fc09ca992f7e0ac28611f1344f337ee.jpg" alt="Cozy Interior">
+          <div class="info">
+            <p>Cozy Interior</p>
+          </div>
+        </div>
+        <div class="menu-card">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTIq7koaztUx18G5DIR5EkYYHd7BwTUGf0TGQ&s" alt="Elegant Dining">
+          <div class="info">
+            <p>Elegant Dining</p>
+          </div>
+        </div>
+        <div class="menu-card">
+          <img src="https://img.freepik.com/free-photo/chef-cooking-kitchen-while-wearing-professional-attire_23-2151208266.jpg?semt=ais_hybrid&w=740&q=80" alt="Chef at Work">
+          <div class="info">
+            <p>Our Chef in Action</p>
+          </div>
+        </div>
+        <div class="menu-card">
+          <img src="https://staticcookist.akamaized.net/wp-content/uploads/sites/22/2022/06/LINK-TRAFFIC-18.jpg" alt="Dessert">
+          <div class="info">
+            <p>Delicious Desserts</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Hotel Info Section -->
+    <section id="hotel-info" class="section">
+      <h2>Hotel Overview</h2>
+      <div class="summary-box">
+        <p><strong>Total Staff:</strong> 35</p>
+        <p><strong>Total Chefs:</strong> 5</p>
+      </div>
+      <div class="menu-list">
+        <div class="menu-card">
+          <img src="https://www.gentinghotel.co.uk/_next/image?url=https%3A%2F%2Fs3.eu-west-2.amazonaws.com%2Fstaticgh.gentinghotel.co.uk%2Fuploads%2Fhero%2FSuiteNov2022_0008_1920.jpg&w=3840&q=75" alt="Total Hotel Rooms">
+          <div class="info">
+            <p>Total Hotel Rooms: 50</p>
+          </div>
+        </div>
+        <div class="menu-card">
+          <img src="https://okl.scene7.com/is/image/OKL/guestroom_2?wid=1000&op_sharpen=1" alt="Guest Rooms">
+          <div class="info">
+            <p>Guest Rooms: 40</p>
+          </div>
+        </div>
+        <div class="menu-card">
+          <img src="  https://ammaint.com/wp-content/uploads/2017/06/clean-restrooms-600w.jpeg" alt="Rest Rooms">
+          <div class="info">
+            <p>Rest Rooms: 10</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Delivery Partners Section -->
+    <div id="delivery-companies" class="section">
+      <h2>Our Delivery Partners</h2>
+      <div class="company-logos">
+        <div class="company-card">
+          <img src="https://play-lh.googleusercontent.com/I0Y2mCsQQEf0nV7dDKuLkeMDBXUS2lQlQerBNp_e9lZi6ymUZ-ymBMpKVDG72C4bh1c" alt="Swiggy">
+          <p>Swiggy</p>
+        </div>
+        <div class="company-card">
+          <img src="https://play-lh.googleusercontent.com/ixPkPHkzd8VD0HbmCL1n5PKYi3tWn8hGpRjeP6lutuFWZ6VpXUePGa9ZHcP6f_99bDA=s256-rw" alt="Zomato">
+          <p>Zomato</p>
+        </div>
+        <div class="company-card">
+          <img src="https://miro.medium.com/v2/resize:fit:1400/1*toc9ulfe_gc6vvZmJ8hJEg.jpeg" alt="Dunzo">
+          <p>Dunzo</p>
+        </div>
+        <div class="company-card">
+          <img src="https://www.sparrowsph.my/image/cache/data/theme/TECH/food-panda_040920001804-1059x680_0.jpg" alt="Foodpanda">
+          <p>Foodpanda</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- QR Code Payment Section -->
+    <section id="payment-qr-section" class="section">
+      <h2>Pay via UPI QR Code</h2>
+      <div class="flex-form">
+        <input type="number" id="payment-amount" placeholder="Enter Amount" required>
+        <button type="button" onclick="generateQRCode(document.getElementById('payment-amount').value)">Generate QR
+          Code</button>
+      </div>
+      <div id="payment-qr" style="display:none; text-align:center; margin-top:20px;">
+        <h3 id="qr-amount"></h3>
+        <div id="qrcode"></div>
+      </div>
+    </section>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+    <script>
+      function generateQRCode(amount, purpose = "Payment") {
+        const qrContainer = document.getElementById("qrcode");
+        qrContainer.innerHTML = "";
+        const upiId = "yourupi@bank";
+        const qrText = `upi://pay?pa=${upiId}&pn=Riverside+Bistro&am=${amount}&cu=INR&tn=${purpose}`;
+        new QRCode(qrContainer, { text: qrText, width: 200, height: 200 });
+        document.getElementById("qr-amount").innerText = `Amount: ₹${amount}`;
+        document.getElementById("payment-qr").style.display = "block";
+      }
+    </script>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section">
+      <h2>Contact Us</h2>
+      <p><strong>Owner:</strong> Mr. Biswajit Pattanaik</p>
+      <p><strong>Email:</strong> pattanaikbiswajit07@gmail.com</p>
+      <p><strong>Phone:</strong> 8658846620</p>
+      <p><strong>Address:</strong> Riverside Street, Jatni, Khordha, PIN - 752025</p>
+    </section>
+
+
+  </main>
+
+  <footer class="footer">
+    <p>&copy; 2025 Riverside Bistro & Hotel</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+
+</html>

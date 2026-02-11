@@ -1,0 +1,334 @@
+/* ===== Root Variables ===== */
+:root {
+  --bg: #0f121b;             /* Dark background */
+  --primary: #00fff7;        /* Neon cyan */
+  --secondary: #bf00ff;      /* Neon purple */
+  --muted: #cfd8dc;          /* Light gray */
+  --card: rgba(26,31,43,0.85); /* Dark transparent cards */
+  --radius: 16px;
+  --transition: 0.3s ease;
+  font-family: 'Inter', sans-serif;
+}
+
+/* ===== Reset & Base Styles ===== */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: linear-gradient(180deg, #0a0f18 0%, #1a1f2b 100%);
+  color: var(--muted);
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  font-family: 'Inter', sans-serif;
+  line-height: 1.6;
+}
+
+/* ===== Header ===== */
+header.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 32px;
+  background: rgba(0,0,0,0.85);
+  backdrop-filter: blur(12px);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.logo {
+  font-size: 28px;
+  font-weight: 700;
+  background: linear-gradient(90deg, var(--primary), var(--secondary));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.nav a {
+  padding: 8px 16px;
+  border-radius: 12px;
+  text-decoration: none;
+  color: var(--muted);
+  transition: all var(--transition);
+}
+
+.nav a:hover, .nav a.active {
+  color: #0f121b;
+  background: linear-gradient(90deg, rgba(0,255,247,0.6), rgba(191,0,255,0.6));
+  box-shadow: 0 0 14px rgba(0,255,247,0.9), 0 0 20px rgba(191,0,255,0.5);
+}
+
+/* ===== Sections ===== */
+.main {
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+  padding: 24px 32px;
+}
+
+.section {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.section h2 {
+  font-size: 28px;
+  color: var(--primary);
+  text-align: center;
+  text-shadow: 0 0 8px rgba(0,255,247,0.6);
+}
+
+/* ===== Home Section ===== */
+.home-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 16px;
+  padding: 40px 20px;
+}
+
+.home-logo {
+  width: 150px;
+  animation: float 3s ease-in-out infinite;
+}
+
+.home-title {
+  font-size: 40px;
+  background: linear-gradient(90deg, var(--primary), var(--secondary));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.home-subtitle {
+  font-size: 18px;
+  color: var(--muted);
+}
+
+@keyframes float {
+  0%,100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+/* ===== Forms ===== */
+.flex-form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  background: var(--card);
+  padding: 20px;
+  border-radius: var(--radius);
+  justify-content: center;
+}
+
+.flex-form input,
+.flex-form select,
+.flex-form button {
+  padding: 10px;
+  border-radius: 12px;
+  border: 1px solid rgba(0,255,247,0.3);
+  flex: 1 1 200px;
+  background: rgba(26,31,43,0.7);
+  color: var(--muted);
+  transition: all var(--transition);
+}
+
+.flex-form button {
+  background: linear-gradient(90deg, var(--primary), var(--secondary));
+  border: none;
+  color: #0f121b;
+  cursor: pointer;
+}
+
+.flex-form button:hover {
+  box-shadow: 0 0 20px rgba(0,255,247,0.9), 0 0 35px rgba(191,0,255,0.6);
+  transform: translateY(-3px);
+}
+
+/* ===== Menu Filters ===== */
+.menu-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: center;
+}
+
+.menu-filters button {
+  padding: 8px 16px;
+  border-radius: 12px;
+  border: 1px solid rgba(0,255,247,0.3);
+  background: transparent;
+  color: var(--muted);
+  cursor: pointer;
+  transition: all var(--transition);
+}
+
+.menu-filters button.active,
+.menu-filters button:hover {
+  background: linear-gradient(90deg, rgba(0,255,247,0.4), rgba(191,0,255,0.4));
+  color: #0f121b;
+  box-shadow: 0 0 18px rgba(0,255,247,0.9), 0 0 25px rgba(191,0,255,0.5);
+}
+
+/* ===== Menu Cards Flex Layout ===== */
+.menu-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  justify-content: center;
+}
+
+.menu-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: var(--card);
+  border-radius: var(--radius);
+  flex: 1 1 220px;
+  overflow: hidden;
+  transition: all var(--transition);
+}
+
+.menu-card img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+}
+
+.menu-card .info {
+  padding: 12px;
+  text-align: center;
+  color: var(--muted);
+}
+
+.menu-card:hover {
+  box-shadow: 0 0 20px rgba(0,255,247,0.9), 0 0 35px rgba(191,0,255,0.5);
+  transform: translateY(-6px);
+}
+
+/* ===== Dish Checkboxes ===== */
+.dish-checkboxes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+}
+
+.dish-checkboxes label {
+  background: var(--card);
+  padding: 6px 10px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+/* ===== Summary Boxes ===== */
+.summary-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 12px;
+  padding: 12px;
+  border-radius: var(--radius);
+  background: var(--card);
+}
+
+/* ===== Delivery Companies ===== */
+.delivery-companies {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 24px;
+  text-align: center;
+}
+.company-logos {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 12px;
+}
+
+.company-logos img {
+  height: 50px;
+  background: #1a1f2b;
+  padding: 6px 10px;
+  border-radius: 8px;
+  transition: transform var(--transition);
+}
+
+.company-logos img:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 12px rgba(0,255,247,0.8);
+}
+
+/* ===== Gallery Flex ===== */
+#gallery .menu-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  justify-content: center;
+}
+
+#gallery .menu-card img {
+  height: 200px;
+}
+
+/* ===== Hotel Info Flex Cards ===== */
+.hotel-info .staff-cards,
+.hotel-info .rooms,
+.hotel-info .facilities {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 16px;
+}
+
+.hotel-info .staff-card,
+.hotel-info .room-card,
+.hotel-info .facility-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 180px;
+  background: var(--card);
+  border-radius: var(--radius);
+  padding: 12px;
+  text-align: center;
+}
+
+/* ===== Footer ===== */
+.footer {
+  text-align: center;
+  padding: 16px;
+  background: rgba(0,0,0,0.6);
+  color: var(--muted);
+  font-size: 14px;
+}
+
+/* ===== Responsive Flex ===== */
+@media (max-width: 768px) {
+  .menu-card, #gallery-list .menu-card {
+    width: 45%;
+  }
+}
+
+@media (max-width: 480px) {
+  .menu-card, #gallery-list .menu-card {
+    width: 100%;
+  }
+  header .nav {
+    flex-direction: column;
+    gap: 5px;
+  }
+}
